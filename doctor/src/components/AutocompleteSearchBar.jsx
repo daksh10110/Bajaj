@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
+const getPrimarySpecialty = (doctor) => {
+  console.log("SDAF")
+  console.log(doctor.specialities);
+  if (doctor.specialities && doctor.specialities.length > 0 && doctor.specialities[0].name) {
+    return doctor.specialities[0].name;
+  }
+  return 'N/A';
+};
+
 const AutocompleteSearchBar = ({
   initialSearchTerm = '',
   onSearchChange,
@@ -21,7 +30,7 @@ const AutocompleteSearchBar = ({
           id: doctor.id, 
           name: doctor.name, 
           photo: doctor.photo || "",
-          specialty: doctor.specialty 
+          specialty: getPrimarySpecialty(doctor || [])
         }));
 
       setSuggestions(filteredSuggestions);
