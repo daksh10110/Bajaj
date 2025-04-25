@@ -34,7 +34,7 @@ const DoctorCard = ({ doctor }) => {
   // Handle potentially "null" string in photo URL
   const photoUrl = doctor.photo && doctor.photo !== "null"
     ? doctor.photo
-    : 'https://via.placeholder.com/80'; // Default placeholder
+    : 'https://via.placeholder.com/80';
 
   return (
     <div className="doctor-card" style={{ display: 'flex', border: '1px solid #eee', borderRadius: '8px', padding: '15px', marginBottom: '15px', justifyContent: 'space-between', alignItems: 'flex-start' /* Align items top */ }}>
